@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request
 
-import jumpingJacks2
+import workouts.jumpingJacks2 as jumpingJacks2
+#from workouts.jumpingJacks2 import finalScore
 
 views = Blueprint(__name__, "views")
 
@@ -22,14 +23,13 @@ def jumpingJacks():
 def runJumpingJacks():
     return jumpingJacks2.run_jumping_jacks_counter()
 
-# @views.route("/video_feed")
-# def jumpingJacksRun():
-#     return jumpingJacks2.run_jumping_jacks_counter()
 
-@views.route("/terminatejumpingJacks")
+@views.route("/terminatejumpingJacks", methods=['GET'])
 def terminatejumpingJacks():
-    jumpingJacks2.terminate_JJ()
-    return render_template("profile.html")
+    finalScore, caloriesBurned = jumpingJacks2.terminate_JJ()
+    print("Final score: ", finalScore)
+    return render_template("jumpingJacks.html", userScore=finalScore, caloriesCount=caloriesBurned)
+
 
 @views.route("/restartjumpingJacks")
 def restartjumpingJacks():

@@ -8,10 +8,14 @@ md_drawing_styles=md.solutions.drawing_styles
 md_pose=md.solutions.pose
 
 terminateStatus = False
+finalScore = 0
 
 def terminate_JJ():
     global terminateStatus
+    global finalScore
     terminateStatus = True
+    caloriesBurned = finalScore * 0.2
+    return finalScore, caloriesBurned
 
 def restart_JJ():
     global terminateStatus
@@ -20,6 +24,7 @@ def restart_JJ():
 def generate_frames():
     count = 0
     position = None
+    global finalScore
 
     cap=cv2.VideoCapture(0)#0: takes input from webcam
 
@@ -52,8 +57,9 @@ def generate_frames():
                 if imlist[16][2] <= imlist[12][2] and imlist[15][2] <= imlist[12][2] and position == "up":  # hands return below shoulders
                     position = "down"
                     count += 1
-                    print(count)
-
+                    finalScore = count
+                    print("finalScore inside: ", finalScore)
+                    #print(count)
 
             
             if terminateStatus:
@@ -78,10 +84,12 @@ def generate_frames():
                 cv2.LINE_AA,
             )
 
+
             ret, jpeg = cv2.imencode('.jpg', image)
             frame = jpeg.tobytes()
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+            
 
             # cv2.imshow("Jumping Jacks counter",image) #displaying
             
@@ -90,6 +98,7 @@ def generate_frames():
             #     break
 
         cap.release()
+        
 
 def run_jumping_jacks_counter():
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')

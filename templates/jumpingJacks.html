@@ -6,11 +6,22 @@
     <title>JumpingJacks</title>
 </head>
 <body>
-    <a href="/restartjumpingJacks">Start Work Out</a>
+    <form action="/profile" method="get">
+        <button type="submit">Back</button>
+    </form>
+    <br>
+    <form action="/restartjumpingJacks" method="get">
+        <button type="submit">Start Work Out</button>
+    </form>
     <br>
     <iframe src="/runJumpingJacks" width=1300px height=850px></iframe>
     <br>
-    <a href="/terminatejumpingJacks">Stop Jumping Jacks</a>
-    
+    <br>
+    <form action="/terminatejumpingJacks" method="get">
+        <button type="submit">Stop Work Out</button>
+    </form>
+    <p>Number of sets done this session: {{userScore}}</p>
+    <P>Estimated amount of calories burned: {{caloriesCount}}</P>
+    <p>All time best: </p>
 </body>
 </html>
