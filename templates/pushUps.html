@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JumpingJacks</title>
+    <title>PushUps</title>
     <link rel="stylesheet" type="text/css" href="/static/workouts.css">
 </head>
 <body>
+
     <div class="top-bar">
         <h2 id="top-bar-text">Virtual Gym</h2>
     </div>
-    
     <div class="container">
+
+    
     <form action="/profile" method="get">
         <button type="submit">Back</button>
     </form>
@@ -19,14 +21,14 @@
     <p id="workoutStats">Number of sets done this session: <b>{{userScore}}</b></p>
     <P id="workoutStats">Estimated amount of calories burned: <b>{{caloriesCount}}</b></P>
 
-    <form action="/restartjumpingJacks" method="get">
+    <form action="/restartPushUps" method="get">
         <button type="submit">Start Work Out</button>
     </form>
     <br>
-    <iframe src="/runJumpingJacks" width=1300px height=850px></iframe>
+    <iframe src="/runPushUps" width=1300px height=850px></iframe>
     <br>
     <br>
-    <form action="/terminatejumpingJacks" method="get">
+    <form action="/terminatePushUps" method="get">
         <button type="submit">Stop Work Out</button>
     </form>
     

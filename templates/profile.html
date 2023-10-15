@@ -4,16 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Homepage</title>
+    <link rel="stylesheet" type="text/css" href="/static/profile.css">
 </head>
 <body>
-    <form action="/jumpingJacksPage" method="get">
-        <button type="submit">Do Jumping Jacks</button>
-    </form>
-    <form action="/pushups" method="get">
-        <button type="submit">Do Push Ups!</button>
-    </form>
+
+    <div class="top-bar">
+        <h2 id="top-bar-text">Virtual Gym</h2>
+    </div>
+
     <form action="/" method="get">
         <button type="submit">Return Home</button>
     </form>
+
+    <div class="workouts">
+        <h2>Workouts:</h2>
+        <div class="flex-container">
+            <div class="aWorkout">
+                <iframe src="https://www.youtube.com/embed/hugRaDLJSi0?si=ei3RAAulE5xNP_w7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <form action="/jumpingJacksPage" method="get">
+                    <button type="submit">Do Jumping Jacks</button>
+                </form>
+            </div>
+
+            <div class="aWorkout">
+                <iframe src="https://www.youtube.com/embed/qpcBos-EUug?si=sZ34wlusJeOlWfiH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <form action="/pushUps" method="get">
+                    <button type="submit">Do Push Ups</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="lessons">
+        <h2>Lessons:</h2>
+        <div class="flex-container">
+            <div class="aLesson">
+                <iframe src="https://www.youtube.com/embed/c5SqRb9i020?si=pzLy2ZNWnQiMN4ob" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <form action="/TennisForehand" method="get">
+                    <button type="submit">Practice Tennis Forehand</button>
+                </form>
+            </div>
+
+            <div class="aLesson">
+                <iframe src="https://www.youtube.com/embed/5M52JoEDtwY?si=8Yfxi6X7S2GeYxMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <form action="/TennisBH" method="get">
+                    <button type="submit">Practice Tennis Backhand</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
 </body>
-</html>
+</html> 
