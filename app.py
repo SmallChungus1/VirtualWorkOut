@@ -4,10 +4,19 @@ import pymongo
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-
+from flask_pymongo import PyMongo
+from flask import jsonify
 import datetime as dt
 import requests
+from views import views
 
+#creating app and connecting to mongodb atlas
+app = Flask(__name__)
+app.config['MONGO_URI'] = 'mongodb+srv://123:123@cluster0.nuvlq6v.mongodb.net/?retryWrites=true&w=majority'
+
+mongoAtlas = PyMongo(app)
+
+#connecting to Open Weather Api
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
 API_KEY = open('static/api_key','r').read()
 CITY = "St Louis"
@@ -32,12 +41,6 @@ else:
 weather = response['weather'][0]['description']
 
 #print(weather, celsius, rec)
-
-from views import views
-
-
-
-app = Flask(__name__)
 
 
 app.register_blueprint(views, url_prefix="/")

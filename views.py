@@ -6,6 +6,7 @@ import workouts.jumpingJacks2 as jumpingJacks2
 import workouts.pushup2 as pushUp
 import workouts.tennis as tennisF
 import workouts.tennisBH as tennisB
+import dataFunctions.userAuth as userAuth
 #from workouts.jumpingJacks2 import finalScore
 
 views = Blueprint(__name__, "views")
@@ -20,11 +21,33 @@ views = Blueprint(__name__, "views")
 def register():
     return render_template("reg.html", name="New User")
 
+@views.route("/login")
+def login():
+    return render_template("login.html")
+
+@views.route("/userAuth/login", methods=["GET","POST"])
+def userAuthLogin():
+    if request.method == "POST":
+        userName = request.form.get("username")
+        userPwd = request.form.get("password")
+        if(userAuth.loginCheck(userName,userPwd)):
+            return render_template("profile.html", userName=userName)
+        else:
+            return render_template("login.html")
+    else:
+        return render_template("login.html")
+
+# @views.route("/userAuth/signUp")
+# def userAuthSignUp():
+#     return userAuth.userSignUp()
 @views.route("/profile")
 def profile():
     args = request.args
     name = args.get('name') 
-    return render_template("profile.html", name=name)
+    if not name:
+        return render_template("profile.html", userName="Guest")
+    else:
+        return render_template("profile.html", userName=name)
 
 @views.route("/jumpingJacksPage")
 def jumpingJacks():
