@@ -1,0 +1,46 @@
+/* styles.css */
+
+body {
+    background-color: white;
+    color: blue;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar {
+    background-color: blue;
+    height: 60px;
+}
+
+#weather-things{
+    color:blueviolet
+}
+#top-bar-text {
+    color: white; 
+    margin: 0; 
+    text-align: center;
+    line-height: 50px;
+}
+
+div {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid blue;
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.1);
+    margin: 20px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue;
+}
