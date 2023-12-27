@@ -8,14 +8,13 @@ from flask_pymongo import PyMongo
 from flask import jsonify
 import datetime as dt
 import requests
-from config import Config
 from views import views
+#you would store your own mongodb atlas connection string under the "Config" class in a config.py file created by yourself
+from config import Config
 
 #creating app and connecting to mongodb atlas
 app = Flask(__name__)
-app.config.from_object(Config)
-
-mongoAtlas = PyMongo(app)
+bcrypt = Bcrypt(app)
 
 #connecting to Open Weather Api
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
