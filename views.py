@@ -34,10 +34,8 @@ def userAuthLogin():
         if(userAuth.loginCheck(userName,userPwd)):
             
             return render_template("profile.html", userName=userName)
-        else:
-            return render_template("login.html")
-    else:
-        return render_template("login.html")
+       
+    return render_template("login.html", showAlert = True)
 
 @views.route("/userAuth/signUp", methods=["GET","POST"])
 def userAuthSignUp():
@@ -47,7 +45,7 @@ def userAuthSignUp():
         pwdConfirm = request.form.get("passwordConfirm")
         if userAuth.userSignUp(userName, userPwd, pwdConfirm):
             return render_template("profile.html", userName=userName)
-    return render_template('reg.html')
+    return render_template('reg.html', showAlert = True)
 @views.route("/profile")
 def profile():
     args = request.args

@@ -7,12 +7,16 @@
 </head>
 <body>
 
-    <h3>Hello, {{name}}! Sign Up Below!</h3>
+    {%if showAlert%}
+    <script>
+        alert("SignUp Failed: Either username already taken or entered passwords do not match");
+    </script>
+    {% endif %}
 
     <form action="/" method="get">
         <button type="submit">Back</button>
     </form>
-    <br>
+    <h1>Hello! Sign Up Below!</h1>
     <form action="/userAuth/signUp"method="POST">
         <lanel for="username">Username:</lanel><br>
         <input type="text" name="username" placeholder="Username" required><br>
@@ -23,5 +27,7 @@
         <button type="submit">Register</button>
     </form>
     
+
+   
 </body>
-</html>
+</html> 
