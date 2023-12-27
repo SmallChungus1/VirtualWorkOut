@@ -8,11 +8,12 @@ from flask_pymongo import PyMongo
 from flask import jsonify
 import datetime as dt
 import requests
+from config import Config
 from views import views
 
 #creating app and connecting to mongodb atlas
 app = Flask(__name__)
-app.config['MONGO_URI'] = 'mongodb+srv://123:123@cluster0.nuvlq6v.mongodb.net/?retryWrites=true&w=majority'
+app.config.from_object(Config)
 
 mongoAtlas = PyMongo(app)
 
