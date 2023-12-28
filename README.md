@@ -29,10 +29,10 @@ pip install Flask-SQLAlchemy
 
 
 2: create a file named "config.py" containing the code below:
-
+``````
 class Config:
     MONGO_URI = 'your-mongodb-atlas-connection-string'
-
+``````
 
 3: run "python app.py" to run the app! Thanks for checking this project out :D
 
