@@ -7,17 +7,18 @@ It also uses mongoDB-atlas for user authentication, so if you want to run the ap
 
 
 ![Alt text](image.png)
-![Alt text](image-1.png)
 
-You can check out the live version hosted on heroku here: 
-Note: the live version is not fully functional as heroku cannot access webcams. To fully run the app you'd have to 
-download and run following instructions below: 
+
+
+You can check out the live version hosted on heroku here: https://virtual-workout-955f643f91f5.herokuapp.com/
+
+Note: the live version is not fully functional as heroku cannot access webcams. To fully run the app you'd have to follow the instructions below: 
 
 1: Install the following (or check requirements.txt):
 
 pip install opencv-python
 
-python -m pip install mediapipe 
+pip install mediapipe 
 
 pip install Flask
 
