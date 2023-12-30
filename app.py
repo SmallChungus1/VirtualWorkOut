@@ -47,7 +47,7 @@ app.register_blueprint(views, url_prefix="/")
 
 @app.route("/")
 def home():
-    return render_template("index.html", name="User", temp = celsius, weathDesc = weather, recommnedation = rec, city = CITY)
+    return render_template("index.html", name="User", temp = celsius, weathDesc = weather, recommnedation = rec, city = CITY, showHomePageAlert=True)
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)

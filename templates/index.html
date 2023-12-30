@@ -34,7 +34,11 @@
         
         </div>
 
-    
+        {%if showHomePageAlert%}
+        <script>
+            alert("The workout estimations can't run on the live app due as heroku can't access client side webcams. To run the full app, please download from this project's github repo: https://github.com/SmallChungus1/VirtualWorkOut.git");
+        </script>
+        {% endif %}
     
     <!-- <form action="/register" method="get">
         <button type="submit">Sign Up</button>
