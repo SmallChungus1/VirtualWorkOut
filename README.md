@@ -10,7 +10,7 @@ It also uses mongoDB-atlas for user authentication, so if you want to run the ap
 
 
 
-You can check out the live version hosted on heroku here: https://virtual-workout-955f643f91f5.herokuapp.com/
+You can check out the live version hosted on heroku here: https://virtual-workout-955f643f91f5.herokuapp.com/ (deactivated)
 
 Note: the live version is not fully functional as heroku cannot access webcams. To fully run the app you'd have to follow the instructions below: 
 
